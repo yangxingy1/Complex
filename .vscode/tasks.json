@@ -1,0 +1,111 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "new": "cpp",
+        "typeinfo": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp",
+        "map": "c",
+        "stdio.h": "c",
+        "algorithm": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "exception": "cpp",
+        "ios": "cpp",
+        "istream": "cpp",
+        "iterator": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "set": "cpp",
+        "stack": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "xfacet": "cpp",
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "xlocinfo": "cpp",
+        "xlocnum": "cpp",
+        "xmemory": "cpp",
+        "xstddef": "cpp",
+        "xstring": "cpp",
+        "xtr1common": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp",
+        "stdlib.h": "c",
+        "string.h": "c"
+    },
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "aiXcoder.showTrayIcon": true,
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "command": "D:\\Program Files (x86)\\redpanda\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe 生成活动文件",
+            "command": "D:\\Mingw\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "D:\\Mingw\\MinGW\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "调试器生成的任务。"
+        }
+    ],
+    "version": "2.0.0"
+}
