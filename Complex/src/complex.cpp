@@ -52,12 +52,33 @@ Complex Complex::converse() const
 //输出重载
 ostream& operator<<(ostream &os, const Complex &a) 
 {
-    if (a.getY() > 0)
-        os << a.getX() << '+' << a.getY() << 'i';
-    else if (a.getY() == 0)
-        os << a.getX();
+    if (a.getX() != 0)
+    {
+        if (a.getY() > 0)
+        {
+            if (a.getY() != 1)
+                os << a.getX() << '+' << a.getY() << 'i';
+            else   
+                os << a.getX() << '+' << 'i';
+        }
+        else if (a.getY() == 0)
+            os << a.getX();
+        else
+        {
+            if (a.getY() != -1)
+                os << a.getX() << a.getY() << 'i';
+            else
+                os << a.getX() << '-' << 'i';
+        }
+            
+    }
     else
-        os << a.getX() << a.getY() << 'i';
+    {
+        if(a.getY() == 0)
+            os << '0';
+        else
+            os << a.getY() << 'i';
+    }
     return os;
 }
 
@@ -80,6 +101,11 @@ Complex Complex::operator-(const double& other) const
     return result;
 }
 
+Complex Complex::operator-() const
+{
+    Complex result(-getX(), -getY());
+    return result;
+}
 Complex Complex::operator*(const double& other) const
 {
     Complex result;
@@ -132,6 +158,45 @@ Complex Complex::operator/(const Complex& other) const
     return result;
 }
 
+void Complex::operator+=(const Complex& other)
+{
+    setX(getX() + other.getX());
+    setY(getY() + other.getY());
+}
+
+void Complex::operator-=(const Complex& other)
+{
+    setX(getX() - other.getX());
+    setY(getY() - other.getY());
+}
+
+void Complex::operator*=(const Complex& other)
+{
+    double x = getX();
+    double y = getY();
+    setX(x * other.getX() - y * other.getY());
+    setY(x * other.getY() + y * other.getX());
+}
+
+void Complex::operator/=(const Complex& other)
+{
+    double temp = other.getX() * other.getX() + other.getY() * other.getY();
+    (*this) *= other.converse();
+    (*this) = (*this) / temp;
+}
+
+Complex Complex::pow(int exponent) const
+{
+    Complex result(1,0);
+    if (exponent >= 0)
+        for(int i=0;i<exponent;i++)
+            result = result * (*this);
+    else
+        for(int i=exponent;i<0;i++)
+            result = result * (*this);
+    return result;
+}
+
 //关系运算符重载
 bool Complex::operator<(const Complex& other) const
 {
@@ -166,13 +231,13 @@ bool Complex::operator>=(const Complex& other) const
 int main()
 {
     cout << "hello world!" << endl;
-    Complex a(1,2);
-    Complex b(2,3);
-    Complex c = a;
-    Complex d = a + b;
-    cout << a << endl;
+    Complex a(4,2);
+    Complex b(1,1);
+    Complex c = a / b;
+    a /= b;
+    cout << "a:" << a << endl;
+    cout << "b:" << b << endl;
+    cout << "c:" << c << endl;
     cout << a * b << endl;
-    if (a != c)
-        cout << "hello world!" << endl;
     return 0;
 }

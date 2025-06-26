@@ -26,11 +26,22 @@ public:
     Complex operator-(const double& other) const;
     Complex operator*(const double& other) const;
     Complex operator/(const double& other) const;
-    //算术运算符重载
+    //---------------算术运算符重载-------------------
+    // 单目
     Complex operator+(const Complex& other) const;
     Complex operator-(const Complex& other) const;
+    Complex operator-() const;
     Complex operator*(const Complex& other) const;
     Complex operator/(const Complex& other) const;
+    // 双目
+    void operator+=(const Complex& other);
+    void operator-=(const Complex& other);
+    void operator*=(const Complex& other);
+    void operator/=(const Complex& other);
+    //-----------------------------------------------
+
+    Complex pow(int exponent) const;
+
     //关系运算符重载
     bool operator<(const Complex& other) const;
     bool operator>(const Complex& other) const;
